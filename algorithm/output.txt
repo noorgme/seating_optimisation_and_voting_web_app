@@ -1,0 +1,44 @@
+Minimum Table Size: 7
+
+Round 1:
+Company_2 (Table Size: 7): Investor_1 Investor_2 Investor_22 Investor_37 Investor_52 Investor_63 Investor_73
+Company_9 (Table Size: 7): Investor_3 Investor_7 Investor_17 Investor_36 Investor_61 Investor_76
+Company_10 (Table Size: 7): Investor_4 Investor_20 Investor_27 Investor_28 Investor_38 Investor_51 Investor_75
+Company_8 (Table Size: 7): Investor_5 Investor_9 Investor_31 Investor_34 Investor_62
+Company_12 (Table Size: 7): Investor_6 Investor_26 Investor_32 Investor_45 Investor_46 Investor_72 Investor_79
+Company_5 (Table Size: 7): Investor_8 Investor_24 Investor_49 Investor_55 Investor_67 Investor_77 Investor_80
+Company_1 (Table Size: 7): Investor_10 Investor_11 Investor_35 Investor_43 Investor_54 Investor_58 Investor_69
+Company_4 (Table Size: 7): Investor_12 Investor_15 Investor_16 Investor_21 Investor_40 Investor_47 Investor_71
+Company_7 (Table Size: 7): Investor_13 Investor_18 Investor_23 Investor_25 Investor_33 Investor_48
+Company_11 (Table Size: 7): Investor_14 Investor_19 Investor_29 Investor_30 Investor_64 Investor_70 Investor_74
+Company_6 (Table Size: 7): Investor_39 Investor_41 Investor_42 Investor_44 Investor_50 Investor_53 Investor_59
+Company_3 (Table Size: 7): Investor_56 Investor_57 Investor_60 Investor_65 Investor_66 Investor_68 Investor_78
+
+Round 2:
+Company_10 (Table Size: 7): Investor_1 Investor_7 Investor_17 Investor_46 Investor_52 Investor_64 Investor_70
+Company_6 (Table Size: 7): Investor_2 Investor_15 Investor_20 Investor_32 Investor_37 Investor_61 Investor_73
+Company_2 (Table Size: 7): Investor_3 Investor_11 Investor_13 Investor_26 Investor_29 Investor_30 Investor_77
+Company_1 (Table Size: 7): Investor_4 Investor_14 Investor_57 Investor_71 Investor_72 Investor_74 Investor_80
+Company_7 (Table Size: 7): Investor_5 Investor_12 Investor_44 Investor_45 Investor_49 Investor_60
+Company_3 (Table Size: 7): Investor_6 Investor_8 Investor_9 Investor_16 Investor_24 Investor_50 Investor_59
+Company_8 (Table Size: 7): Investor_10 Investor_18 Investor_25 Investor_36 Investor_53
+Company_5 (Table Size: 7): Investor_19 Investor_22 Investor_23 Investor_27 Investor_75 Investor_76 Investor_78
+Company_11 (Table Size: 7): Investor_21 Investor_31 Investor_33 Investor_41 Investor_47 Investor_58 Investor_79
+Company_9 (Table Size: 7): Investor_28 Investor_35 Investor_38 Investor_40 Investor_51 Investor_54 Investor_68
+Company_12 (Table Size: 7): Investor_34 Investor_42 Investor_43 Investor_55 Investor_62 Investor_65
+Company_4 (Table Size: 7): Investor_39 Investor_48 Investor_56 Investor_63 Investor_66 Investor_67 Investor_69
+
+Round 3:
+Company_12 (Table Size: 7): Investor_1 Investor_13 Investor_27 Investor_29 Investor_36
+Company_5 (Table Size: 7): Investor_2 Investor_17 Investor_18 Investor_25 Investor_56 Investor_57 Investor_68
+Company_6 (Table Size: 7): Investor_3 Investor_31 Investor_38 Investor_47 Investor_49 Investor_62 Investor_80
+Company_11 (Table Size: 7): Investor_4 Investor_6 Investor_7 Investor_12 Investor_35 Investor_44 Investor_73
+Company_1 (Table Size: 7): Investor_5 Investor_41 Investor_65 Investor_70 Investor_75 Investor_77 Investor_78
+Company_8 (Table Size: 7): Investor_8 Investor_11 Investor_22 Investor_26 Investor_50 Investor_52
+Company_2 (Table Size: 7): Investor_9 Investor_19 Investor_20 Investor_40 Investor_48 Investor_54 Investor_61
+Company_9 (Table Size: 7): Investor_10 Investor_21 Investor_23 Investor_53 Investor_66 Investor_69 Investor_74
+Company_4 (Table Size: 7): Investor_14 Investor_28 Investor_33 Investor_45 Investor_64 Investor_79
+Company_3 (Table Size: 7): Investor_15 Investor_34 Investor_43 Investor_58 Investor_63 Investor_72 Investor_76
+Company_7 (Table Size: 7): Investor_16 Investor_30 Investor_42 Investor_46 Investor_51 Investor_67 Investor_71
+Company_10 (Table Size: 7): Investor_24 Investor_32 Investor_37 Investor_39 Investor_55 Investor_59 Investor_60
+
