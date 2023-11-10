@@ -11,5 +11,9 @@ def index():
         db.session.add(user)
         db.session.commit()
         flash('Email added successfully!')
-        return redirect(url_for('index'))
+        return redirect(url_for('scoring'))
     return render_template('index.html', form=form)
+
+@app.route("/scoring", methods = ['GET', 'POST'])
+def scoring():
+    return render_template("scoring.html")
