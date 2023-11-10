@@ -12,9 +12,9 @@
 
   .u-rating {
     display: block;
-    margin: 10px auto;
+    margin: 0 auto;
     font-family: 'Arial', sans-serif;
-    font-size: 16px;
+    font-size: 11px;
     padding: 8px;
     border: 1px solid #aaa;
     border-radius: 4px;
@@ -29,6 +29,14 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0; }
+
+  .u-container-layout {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+}
+
 
 .fr-view img.fr-rounded, .fr-view .fr-img-caption.fr-rounded img {
   border-radius: 10px;
