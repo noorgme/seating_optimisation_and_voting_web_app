@@ -98,7 +98,7 @@ def write_output(results, table_sizes, file_path):
 
 
 
-def main(input_file_path, output_file_path):
+def seat(input_file_path, output_file_path):
     companies, investors = read_input(input_file_path)
     num_investors = len(investors)
     table_sizes = calculate_min_table_size(companies, investors, num_investors)
@@ -107,5 +107,3 @@ def main(input_file_path, output_file_path):
         write_output(results, table_sizes, output_file_path)
 
 
-if __name__ == "__main__":
-    main('input.txt', 'output.txt')
