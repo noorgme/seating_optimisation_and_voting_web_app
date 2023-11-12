@@ -4,6 +4,7 @@ from .models import User
 from .forms import EmailForm, ScoringForm
 import random
 import os
+from .algorithm import investor_seats
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -79,7 +80,8 @@ def admin_download():
     output_dir = os.path.join(app.root_path, 'algorithm')
     companies_dir = os.path.join(output_dir, 'companies.txt')
     os.makedirs(output_dir, exist_ok=True)
-    output_path = os.path.join(output_dir, 'votes.txt')
+    votes_path = os.path.join(output_dir, 'votes.txt')
+    output_path = os.path.join(output_dir, 'output.txt')
     
     # Query all users
     users = User.query.all()
@@ -113,18 +115,37 @@ def admin_download():
         lines.append(line)
     
     # Write the lines to the output file
-    with open(output_path, 'w') as f:
+    with open(votes_path, 'w') as f:
         for line in lines:
             f.write(f"{line}\n")
     
-    with open(output_path, 'r') as votes:
-        with open(companies_dir, 'a+') as companies:
-            companies.write(votes.read())
-            votes.seek(0)
-            companies.seek(0)
+
 
     # Flash message or log to server that file has been saved
     flash('Top scores have been saved to votes.txt in the output directory.')
     
     # Redirect to the admin page or provide a message
     return redirect(url_for('admin'))
+
+@app.route('/admin/process', methods=['GET'])
+def admin_process():
+    # Ensure the output directory exists
+    output_dir = os.path.join(app.root_path, 'algorithm')
+    os.makedirs(output_dir, exist_ok=True)
+
+    companies_dir = os.path.join(output_dir, 'companies.txt')
+    votes_path = os.path.join(output_dir, 'votes.txt')
+    companies_and_votes = os.path.join(output_dir, 'companies_and_votes.txt')
+    output_path = os.path.join(output_dir, 'output.txt')
+    
+    with open(votes_path, 'r') as votes:
+        with open(companies_dir, 'r') as companies:
+            with open(companies_and_votes, "w") as input:
+                input.write(companies.read())
+                input.write(votes.read())
+                votes.seek(0)
+                companies.seek(0)
+    
+    # Optimise seats:
+    investor_seats.seat(companies_and_votes, output_path)
+    return redirect(url_for('index'))

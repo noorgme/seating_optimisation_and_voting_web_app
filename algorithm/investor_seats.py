@@ -1,4 +1,5 @@
 import pulp
+import sys
 from collections import defaultdict
 # Read companies and investors preferences from file
 def read_input(file_path):
@@ -57,11 +58,12 @@ def seating_lp(companies, investors, num_investors, table_sizes, check_feasibili
                     prob += x[(i, j, k1)] + x[(i, j, k2)] <= 1
 
     for j in companies:
+        print (j)
         for k in range(1, 4):
             prob += pulp.lpSum([x[(i, j, k)] for i in investors]) <= table_sizes[j]
             if not check_feasibility:
                 
-                prob += pulp.lpSum([x[(i, j, k)] for i in investors]) >= (table_sizes[j]) * 0.6
+                prob += pulp.lpSum([x[(i, j, k)] for i in investors]) >= (table_sizes[j]) * 0.8
 
 
     for i in investors:
@@ -106,4 +108,12 @@ def seat(input_file_path, output_file_path):
     if results:
         write_output(results, table_sizes, output_file_path)
 
+if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: python3 investoralgorithm.py <input_file_path> <output_file_path>")
+        sys.exit(1)
 
+    input_file_path = sys.argv[1]
+    output_file_path = sys.argv[2]
+    
+    seat(input_file_path, output_file_path)

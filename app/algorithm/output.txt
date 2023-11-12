@@ -1,0 +1,44 @@
+Minimum Table Size: 5
+
+Round 1:
+Omnia Biosystems (Table Size: 5): adammcdonald@example.net jeffreyhawkins@example.com melissajenkins@example.org robertjordan@example.org zmoreno@example.net
+ROMA (Table Size: 5): adrianacollins@example.net gregory14@example.net kenneth90@example.net robertclark@example.com tbaker@example.org
+PropX (Table Size: 5): amyrodriguez@example.com daniel30@example.net marie20@example.org mariejohnson@example.org qunderwood@example.com
+MATRX (Table Size: 5): anthonyjones@example.net jacqueline28@example.org leegregory@example.net nhart@example.com robert91@example.com
+Presales.ai (Table Size: 5): bhill@example.com coxrobert@example.net kimberlybraun@example.org palmerjesse@example.com ryananderson@example.org
+Fluen.io (Table Size: 5): brandi60@example.com jacob97@example.org meghanhayes@example.com tylerlarson@example.net ymiranda@example.com
+HIT Coach (Table Size: 5): brittanyjohnson@example.com greencarrie@example.com michael58@example.net simmonsangela@example.net tyler83@example.net
+Neutrally (Table Size: 5): bryan30@example.net coxdonna@example.com houstonshawn@example.com jessica00@example.com yscott@example.com
+EKAI (Table Size: 5): carlsonkyle@example.net gleach@example.com kathy77@example.org robinsondesiree@example.org robinwilkinson@example.net
+Hybrid Credit (Table Size: 5): christianmartinez@example.net fowens@example.net jswanson@example.com rivasjohn@example.org sullivanjessica@example.net
+Convey Guru (Table Size: 5): elowe@example.org kevin08@example.org parkerbrandon@example.org teresa50@example.com zsmith@example.org
+Guliva (Table Size: 5): ericblevins@example.net hughesjoseph@example.com ljones@example.net obrienmatthew@example.net wchandler@example.net
+
+Round 2:
+PropX (Table Size: 5): adammcdonald@example.net jeffreyhawkins@example.com nhart@example.com robertclark@example.com tylerlarson@example.net
+EKAI (Table Size: 5): adrianacollins@example.net coxrobert@example.net hughesjoseph@example.com kenneth90@example.net robert91@example.com
+Neutrally (Table Size: 5): amyrodriguez@example.com ljones@example.net meghanhayes@example.com rivasjohn@example.org simmonsangela@example.net
+HIT Coach (Table Size: 5): anthonyjones@example.net gregory14@example.net mariejohnson@example.org wchandler@example.net yscott@example.com
+ROMA (Table Size: 5): bhill@example.com brandi60@example.com elowe@example.org leegregory@example.net michael58@example.net
+Hybrid Credit (Table Size: 5): brittanyjohnson@example.com greencarrie@example.com kathy77@example.org parkerbrandon@example.org ymiranda@example.com
+Guliva (Table Size: 5): bryan30@example.net christianmartinez@example.net coxdonna@example.com kimberlybraun@example.org sullivanjessica@example.net
+Presales.ai (Table Size: 5): carlsonkyle@example.net jacqueline28@example.org melissajenkins@example.org tbaker@example.org teresa50@example.com
+Fluen.io (Table Size: 5): daniel30@example.net gleach@example.com marie20@example.org robertjordan@example.org zmoreno@example.net
+MATRX (Table Size: 5): ericblevins@example.net fowens@example.net qunderwood@example.com ryananderson@example.org zsmith@example.org
+Convey Guru (Table Size: 5): houstonshawn@example.com jswanson@example.com obrienmatthew@example.net robinwilkinson@example.net tyler83@example.net
+Omnia Biosystems (Table Size: 5): jacob97@example.org jessica00@example.com kevin08@example.org palmerjesse@example.com robinsondesiree@example.org
+
+Round 3:
+ROMA (Table Size: 5): adammcdonald@example.net hughesjoseph@example.com kevin08@example.org qunderwood@example.com sullivanjessica@example.net
+Neutrally (Table Size: 5): adrianacollins@example.net jacqueline28@example.org marie20@example.org obrienmatthew@example.net palmerjesse@example.com
+Hybrid Credit (Table Size: 5): amyrodriguez@example.com ericblevins@example.net mariejohnson@example.org simmonsangela@example.net wchandler@example.net
+PropX (Table Size: 5): anthonyjones@example.net jessica00@example.com ljones@example.net parkerbrandon@example.org teresa50@example.com
+Guliva (Table Size: 5): bhill@example.com carlsonkyle@example.net elowe@example.org jswanson@example.com robinsondesiree@example.org
+HIT Coach (Table Size: 5): brandi60@example.com coxrobert@example.net robert91@example.com robertclark@example.com ryananderson@example.org
+Presales.ai (Table Size: 5): brittanyjohnson@example.com jacob97@example.org meghanhayes@example.com robertjordan@example.org ymiranda@example.com
+EKAI (Table Size: 5): bryan30@example.net jeffreyhawkins@example.com rivasjohn@example.org tbaker@example.org zsmith@example.org
+Omnia Biosystems (Table Size: 5): christianmartinez@example.net greencarrie@example.com kimberlybraun@example.org nhart@example.com tyler83@example.net
+Convey Guru (Table Size: 5): coxdonna@example.com gleach@example.com kathy77@example.org melissajenkins@example.org yscott@example.com
+MATRX (Table Size: 5): daniel30@example.net gregory14@example.net kenneth90@example.net tylerlarson@example.net zmoreno@example.net
+Fluen.io (Table Size: 5): fowens@example.net houstonshawn@example.com leegregory@example.net michael58@example.net robinwilkinson@example.net
+
