@@ -8,3 +8,4 @@ instance/
 .env
 *.sqlite
 migrations/
+*votes.txt
