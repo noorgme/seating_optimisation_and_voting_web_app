@@ -1,14 +1,13 @@
 <!doctype html>
 <html>
 <head>
-    <title>Add Email</title>
+    <title>Email</title>
 </head>
 <body>
-    <h1>Add Your Email</h1>
-    <form method="POST">
-        Email: <input type="email" name="email" required>
-        First Name: <input type="text" name="firstname" required>
-        Last Name: <input type="text" name="lastname" required>
+    <h1>Enter your details below</h1>
+    <form action="/submit_details" method="POST">
+        Email: <input type="email" name="email" required><br>
+        Full Name: <input type="text" name="name" required><br>
         <input type="submit" value="Submit">
     </form>
 </body>
