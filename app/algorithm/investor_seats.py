@@ -61,7 +61,7 @@ def seating_lp(companies, investors, num_investors, table_sizes, check_feasibili
             prob += pulp.lpSum([x[(i, j, k)] for i in investors]) <= table_sizes[j]
             if not check_feasibility:
                 
-                prob += pulp.lpSum([x[(i, j, k)] for i in investors]) >= (table_sizes[j]) * 0.6
+                prob += pulp.lpSum([x[(i, j, k)] for i in investors]) >= (table_sizes[j]) * 0.8
 
 
     for i in investors:

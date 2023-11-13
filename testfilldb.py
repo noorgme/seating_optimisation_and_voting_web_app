@@ -3,10 +3,8 @@ import random
 from app import app, db
 from app.models import User
 
-# Initialize the Faker library
 fake = Faker()
 
-# Initialise flask app context
 
 with app.app_context():
         
@@ -18,11 +16,11 @@ with app.app_context():
     except Exception as e:
         db.session.rollback()
         print(f"Error clearing the database: {e}")
-        exit(1)  # Exit if cannot clear the database
-    # Define the number of users
-    NUM_USERS = 60
+        exit(1) 
+    
+    NUM_USERS = 80
 
-    # Define a list of your startup names as they appear in your model
+    
     startup_names = [
         'convey_guru', 'ekai', 'fluenio', 'guliva', 'hitcoach',
         'hybridcredit', 'matrx', 'neutrally', 'omniabiosystems',
@@ -31,11 +29,11 @@ with app.app_context():
 
     # Generate random users
     for _ in range(NUM_USERS):
-        # Create a new user with a random name and email
+        # Creat new user with a random name and email
         name = fake.name()
         email = fake.email()
 
-        # Create a new User object
+       
         new_user = User(email=email, name=name)
 
         # Assign random scores between 1 and 10 for each startup
@@ -45,7 +43,7 @@ with app.app_context():
         # Add the new user to the session and commit to the database
         db.session.add(new_user)
 
-    # Commit all new users to the database
+    
     db.session.commit()
 
     print(f"Added {NUM_USERS} new users with random votes to the database.")

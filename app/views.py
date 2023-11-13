@@ -1,5 +1,5 @@
 from flask import render_template, request, redirect, url_for, flash, session
-from . import app, db
+from . import app, db, email_seats
 from .models import User
 from .forms import EmailForm, ScoringForm
 import random
@@ -148,4 +148,14 @@ def admin_process():
     
     # Optimise seats:
     investor_seats.seat(companies_and_votes, output_path)
+    return redirect(url_for('admin'))
+
+@app.route('/admin/email', methods=['GET'])
+def admin_email():
+    
+    # Ensure the output directory exists
+    output_dir = os.path.join(app.root_path, 'algorithm')
+    output_path = os.path.join(output_dir, 'output.txt')
+    email_seats.process_and_send(output_path)
+    
     return redirect(url_for('index'))

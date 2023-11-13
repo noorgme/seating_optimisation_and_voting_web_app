@@ -2,14 +2,40 @@
 <html>
 <head>
     <title>Email</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
 </head>
 <body>
-    <h1>Enter your details below</h1>
-    <form action="" method="POST">
-        Email: <input type="email" name="email" required><br>
-        Full Name: <input type="text" name="name" required><br>
-        <input type="submit" value="Submit">
-    </form>
+    
+
+    <div class="login-box">
+        <h2>Enter your details below</h2>
+        <form action="" method = "POST">
+          <div class="user-box">
+            <input type="text" name="email" required="">
+            <label>E-mail</label>
+          </div>
+          <div class="user-box">
+            <input type="text" name="name" required="">
+            <label>Full Name</label>
+          </div>
+          <a href="" id="submitLink">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </a>
+        </form>
+      </div>
+      <script>
+        document.getElementById("submitLink").addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent the default link behavior
+            document.querySelector('form').submit(); // Trigger form submission
+        });
+    </script>
+    
+      
 
 </body>
 </html>
+

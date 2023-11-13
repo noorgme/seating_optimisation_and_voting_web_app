@@ -9,3 +9,5 @@ instance/
 *.sqlite
 migrations/
 *votes.txt
+*emailpw.txt
+*output.txt
