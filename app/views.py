@@ -106,7 +106,21 @@ def admin():
             file_content = ''
             flash('File not found.')
         user_count = User.query.count()
-        return render_template("admin.html", user_count=user_count, file_content=file_content)
+        users_with_scores = User.query.filter(
+        (User.convey_guru > 0) |
+        (User.ekai > 0) |
+        (User.fluenio > 0) |
+        (User.guliva > 0) |
+        (User.hitcoach > 0) |
+        (User.hybridcredit > 0) |
+        (User.matrx > 0) |
+        (User.neutrally > 0) |
+        (User.omniabiosystems > 0) |
+        (User.presalesai > 0) |
+        (User.propx > 0) |
+        (User.roma > 0)
+        ).count()
+        return render_template("admin.html", user_count=user_count, users_with_scores=users_with_scores, file_content=file_content)
 
 @app.route('/admin/add_user', methods=['POST'])
 def admin_add_user():
@@ -336,3 +350,4 @@ def admin_clear_table():
         app.logger.error('Error clearing table: %s', e)
 
     return redirect(url_for('admin'))
+
