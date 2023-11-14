@@ -1,13 +1,13 @@
-Convey Guru,1
-EKAI,1
-Fluen.io,1
-Guliva,1
-HIT Coach,1
-Hybrid Credit,1
-MATRX,1
-Neutrally,1
-Omnia Biosystems,1
-Presales.ai,1
-PropX,1
-ROMA,1
+Convey Guru,2
+EKAI,2
+Fluen.io,2
+Guliva,2
+HIT Coach,2
+Hybrid Credit,2
+MATRX,2
+Neutrally,2
+Omnia Biosystems,2
+Presales.ai,2
+PropX,2
+ROMA,2
 

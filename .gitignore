@@ -12,4 +12,4 @@ migrations/
 *votes.txt
 *emailpw.txt
 *output.txt
-app/emailconfig.py
+emailconfig.py
