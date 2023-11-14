@@ -322,3 +322,17 @@ def admin_edit_file():
         app.logger.error('File save error: %s', e)
 
     return redirect(url_for('admin'))
+
+@app.route('/admin/clear_table', methods=['POST'])
+def admin_clear_table():
+    try:
+        # Delete all records in the User table
+        db.session.query(User).delete()
+        db.session.commit()
+        flash('All data has been cleared.', 'success')
+    except Exception as e:
+        db.session.rollback()
+        flash(f'Error clearing data: {e}', 'error')
+        app.logger.error('Error clearing table: %s', e)
+
+    return redirect(url_for('admin'))

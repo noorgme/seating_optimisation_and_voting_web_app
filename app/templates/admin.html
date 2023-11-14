@@ -5,10 +5,70 @@
     <title>Admin Panel</title>
 </head>
 <body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h4, h5 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input[type="email"], input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        .warning {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .warning:hover {
+            background-color: #c9302c;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+    </style>
     <h1>Admin Panel</h1>
     <p>Current number of users: {{ user_count }}</p><br>
 
-    <h3> Add Investor Manually: </h3>
+    <h4> Add Investor Manually: </h4>
     <form action="{{ url_for('admin_add_user') }}" method="post">
         <input type="email" name="email" placeholder="Email" required>
         <input type="text" name="name" placeholder="Full Name" required>
@@ -25,7 +85,7 @@
     <form action="{{ url_for('admin_parse') }}" method="get">
         <button type="submit">3. Process Plan</button>
     </form>
-    <h2>(Optional) Edit Seating Arrangement</h2>
+    <h4>(Optional) Edit Seating Arrangement</h4>
     <form action="{{ url_for('admin_edit_file') }}" method="post">
         <textarea name="file_content" rows="10" cols="20">{{ file_content }}</textarea><br>
         <button type="submit">Save Changes</button><br><br>
@@ -38,7 +98,9 @@
     </form>
 
     <br>
-
-
+<h5> DO NOT PRESS unless event is complete! </h5>
+    <form action="{{ url_for('admin_clear_table') }}" method="post">
+        <button type="submit">Clear All Data</button>
+    </form>
 </body>
 </html>
