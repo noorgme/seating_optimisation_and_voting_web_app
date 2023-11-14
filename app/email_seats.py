@@ -5,10 +5,10 @@ from collections import defaultdict
 # Replace with your actual email and SMTP details
 SMTP_SERVER = 'smtp.gmail.com'
 SMTP_PORT = 587
-SMTP_USERNAME = 'aiforgeassistant@gmail.com'
-SMTP_PASSWORD = 'hziy zekw kpdg iiie'
-FROM_EMAIL = 'aiforgeassistant@gmail.com'
-FROM_NAME = 'Forge Team'
+SMTP_USERNAME = ''
+SMTP_PASSWORD = ''
+FROM_EMAIL = ''
+FROM_NAME = ''
 
 # Function to parse the seating plan and return a dictionary of email to rounds
 def parse_seating_plan(file_path):
