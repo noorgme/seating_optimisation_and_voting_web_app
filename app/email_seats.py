@@ -1,15 +1,15 @@
 import smtplib
 from email.mime.text import MIMEText
 from collections import defaultdict
-import emailconfig
+from .emailconfig import *
 
 # Replace with your actual email and SMTP details
-SMTP_SERVER = emailconfig.SMTP_SERVER
-SMTP_PORT = 587
-SMTP_USERNAME = emailconfig.SMTP_USERNAME
-SMTP_PASSWORD = emailconfig.SMTP_PASSWORD
-FROM_EMAIL = emailconfig.FROM_EMAIL
-FROM_NAME = emailconfig.FROM_NAME
+SMTP_SERVER = cSMTP_SERVER
+SMTP_PORT = cPORT
+SMTP_USERNAME = cSMTP_USERNAME
+SMTP_PASSWORD = cSMTP_PASSWORD
+FROM_EMAIL = cFROM_EMAIL
+FROM_NAME = cFROM_NAME
 
 # Function to parse the seating plan and return a dictionary of email to rounds
 def parse_seating_plan(file_path):
