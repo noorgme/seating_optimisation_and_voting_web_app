@@ -15,6 +15,9 @@ class User(db.Model):
     presalesai = db.Column(db.Integer, default=0)
     propx = db.Column(db.Integer, default=0)
     roma = db.Column(db.Integer, default=0)
+    round_1 = db.Column(db.String(120), nullable=False)
+    round_2 = db.Column(db.String(120), nullable=False)
+    round_3 = db.Column(db.String(120), nullable=False)
     
     def __repr__(self):
         return '<User %r>' % self.email

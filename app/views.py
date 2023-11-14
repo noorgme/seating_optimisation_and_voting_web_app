@@ -159,3 +159,10 @@ def admin_email():
     email_seats.process_and_send(output_path)
     
     return redirect(url_for('index'))
+
+@app.route('/admin/present', methods=['GET'])
+def admin_present():
+    
+
+    
+    return redirect(url_for('index'))
