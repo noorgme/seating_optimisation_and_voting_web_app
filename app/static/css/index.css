@@ -167,5 +167,20 @@ html {
       bottom: 100%;
     }
   }
-  
+  @media screen and (max-width: 600px) { /* Adjust the max-width as needed */
+    .login-box {
+        width: 90%; /* Adjust the percentage as needed */
+        padding: 20px;
+    }
+
+    .login-box .user-box input,
+    .login-box .user-box label {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .login-box form a {
+        font-size: 14px;
+    }
+}
+
   
