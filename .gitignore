@@ -13,3 +13,5 @@ migrations/
 *emailpw.txt
 *output.txt
 emailconfig.py
+thiskey
+*.pub
