@@ -5,6 +5,8 @@ from .forms import EmailForm, ScoringForm
 import random
 import os
 from .algorithm import investor_seats
+import re
+from collections import defaultdict
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -63,16 +65,63 @@ def scoring():
         db.session.commit()
 
         flash('Thank you for submitting your scores!')
-        session.pop('email', None)  # Clear the session to log out the user
-        return redirect(url_for('index'))  # Redirect to a 'thank you' page or some other page
+        
+        return redirect(url_for('seats'))  # Redirect to a seating page 
 
     # If GET request, render the scoring template
     return render_template('scoring.html')
 
+@app.route("/seats", methods=["GET"])
+def seats():
+    if 'email' not in session:
+        # Redirect user to login page if they're not logged in
+        return redirect(url_for('index'))  # Ensure you have a login route defined
+
+    user_email = session['email']
+    user = User.query.filter_by(email=user_email).first()
+    
+    if not user:
+        # Handle the case where the user is not found
+        return "User not found", 404
+
+    # Assuming 'round_1', 'round_2', and 'round_3' are columns in your User model
+    seating_plan = {
+        'round_1': user.round_1,
+        'round_2': user.round_2,
+        'round_3': user.round_3
+    }
+    
+    return render_template('seats.html', seating_plan=seating_plan)
+
 @app.route('/admin', methods =['GET'])
 def admin():
+    output_dir = os.path.join(app.root_path, 'algorithm')
+    file_path = os.path.join(output_dir, 'parsed.txt')
     if request.method == "GET":
-        return render_template("admin.html")
+            # Read the content of the file
+        try:
+            with open(file_path, 'r') as file:
+                file_content = file.read()
+        except FileNotFoundError:
+            file_content = ''
+            flash('File not found.')
+        user_count = User.query.count()
+        return render_template("admin.html", user_count=user_count, file_content=file_content)
+
+@app.route('/admin/add_user', methods=['POST'])
+def admin_add_user():
+    email = request.form.get('email')
+    name = request.form.get('name')
+    existing_user = User.query.filter_by(email=email).first()
+    if existing_user:
+        flash('A user with this email already exists.')
+    else:
+        new_user = User(email=email, name=name)
+        db.session.add(new_user)
+        db.session.commit()
+        flash('New user added successfully.')
+    return redirect(url_for('admin'))
+
 
 @app.route('/admin/download', methods=['GET'])
 def admin_download():
@@ -160,9 +209,116 @@ def admin_email():
     
     return redirect(url_for('index'))
 
-@app.route('/admin/present', methods=['GET'])
-def admin_present():
-    
+@app.route('/admin/parse', methods=['GET'])
+def admin_parse():
+    output_dir = os.path.join(app.root_path, 'algorithm')
+    file_path = os.path.join(output_dir, 'output.txt')
+    parsed_file = os.path.join(output_dir, 'parsed.txt')
+
+    with open(file_path, 'r') as file:
+        content = file.read()
+        
+    rounds = content.split('Round')
+    seating_plan = defaultdict(list)
+    table_numbers = {
+    "Hybrid Credit": 1,
+    "Omnia Biosystems": 2,
+    "HIT Coach": 3,
+    "Convey Guru": 4,
+    "Neutrally": 5,
+    "ROMA": 6,
+    "MATRX": 7,
+    "Fluen.io": 8,
+    "Guliva": 9,
+    "Presales.ai": 10,
+    "PropX": 11,
+    "EKAI": 12
+    }
 
     
-    return redirect(url_for('index'))
+    # Skip the first split since it's before "Round 1"
+    for round_details in rounds[1:]: 
+        round_number = round_details.split(':')[0].strip()
+        tables = round_details.split('\n')[1:]  # Skip the first element since it's "Round X"
+        for table in tables:
+            if table:  # Check if table string is not empty
+                # Extract table name and emails
+                table_name = re.search(r'(.*) \(Table Size: \d+\):', table).group(1).strip()
+                emails = re.findall(r'[\w\.-]+@[\w\.-]+', table)
+                for email in emails:
+                     
+                    seating_plan[email].append((round_number, table_numbers[table_name]))
+    
+    # Write parsed seating plan to file
+    with open(parsed_file, 'w') as out_file:
+        for email, tables in seating_plan.items():
+            out_file.write(f'{email}\n')
+            for round_number, table_name in tables:
+                out_file.write(f'{round_number}, {table_name}\n')
+            out_file.write('\n')
+        add_plan_to_db()
+    return redirect(url_for('admin'))
+    
+@app.route('/admin/present', methods=['GET'])
+def add_plan_to_db():
+    output_dir = os.path.join(app.root_path, 'algorithm')
+    # file_path = os.path.join(output_dir, 'output.txt')
+    parsed_file = os.path.join(output_dir, 'parsed.txt')
+    with open(parsed_file, 'r') as file:
+        lines = file.readlines()
+
+    # Process the file
+    email = None
+    for line in lines:
+        # If the line contains an email, it's a new user
+        if '@' in line.strip():
+            email = line.strip()
+        else:
+            # Otherwise, it's the round and table information
+            round_info = line.strip().split(', ')
+            if len(round_info) == 2:
+                round_number, table_number = round_info
+                table_number = int(table_number)  # Convert table number to integer
+                
+                # Retrieve the user and update the correct round
+                user = User.query.filter_by(email=email).first()
+                if user:
+                    if round_number == '1':
+                        user.round_1 = table_number
+                    elif round_number == '2':
+                        user.round_2 = table_number
+                    elif round_number == '3':
+                        user.round_3 = table_number
+                    else:
+                        print(f"Invalid round number {round_number} for user {email}")
+                else:
+                    print(f"User with email {email} not found")
+
+    # Commit the changes to the database after processing all users
+    db.session.commit()
+
+
+
+
+    
+    return redirect(url_for('admin'))
+
+
+@app.route('/admin/edit_file', methods=['POST'])
+def admin_edit_file():
+    file_content = request.form.get('file_content')
+    output_dir = os.path.join(app.root_path, 'algorithm')
+    file_path = os.path.join(output_dir, 'parsed.txt')
+    # Update to your file's path
+
+    # Save the updated content back to the file
+    try:
+        with open(file_path, 'w') as file:
+            file.write(file_content)
+            add_plan_to_db()
+        flash('File saved successfully.')
+    except Exception as e:
+        flash('An error occurred while saving the file.')
+        app.logger.error('File save error: %s', e)
+
+    return redirect(url_for('admin'))
