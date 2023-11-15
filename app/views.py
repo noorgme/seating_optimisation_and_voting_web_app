@@ -242,8 +242,8 @@ def admin_parse():
     "Neutrally": 5,
     "ROMA": 6,
     "MATRX": 7,
-    "Fluen.io": 8,
-    "Guliva": 9,
+    "Fluen.io": 9,
+    "Guliva": 8,
     "Presales.ai": 10,
     "PropX": 11,
     "EKAI": 12
