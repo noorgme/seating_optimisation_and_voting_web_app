@@ -14,3 +14,4 @@ migrations/
 *output.txt
 thiskey
 *.pub
+parsed.txt
