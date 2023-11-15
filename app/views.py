@@ -96,7 +96,7 @@ def seats():
 @app.route('/admin', methods =['GET'])
 def admin():
     output_dir = os.path.join(app.root_path, 'algorithm')
-    file_path = os.path.join(output_dir, 'parsed.txt')
+    file_path = os.path.join(output_dir, 'output.txt')
     if request.method == "GET":
             # Read the content of the file
         try:
@@ -311,10 +311,6 @@ def add_plan_to_db():
     # Commit the changes to the database after processing all users
     db.session.commit()
 
-
-
-
-    
     return redirect(url_for('admin'))
 
 
@@ -322,8 +318,8 @@ def add_plan_to_db():
 def admin_edit_file():
     file_content = request.form.get('file_content')
     output_dir = os.path.join(app.root_path, 'algorithm')
-    file_path = os.path.join(output_dir, 'parsed.txt')
-    # Update to your file's path
+    file_path = os.path.join(output_dir, 'output.txt')
+    
 
     # Save the updated content back to the file
     try:

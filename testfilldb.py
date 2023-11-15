@@ -18,7 +18,7 @@ with app.app_context():
         print(f"Error clearing the database: {e}")
         exit(1) 
     
-    NUM_USERS = 80
+    NUM_USERS = 70
 
     
     startup_names = [
