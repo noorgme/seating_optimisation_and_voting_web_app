@@ -48,12 +48,12 @@
       <form action = "" method="post">
     <section class="u-align-center u-clearfix u-container-align-center u-grey-10 u-section-1" id="carousel_2456">
       <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-align-center u-text u-text-default u-text-1">Your seating plan will show here soon...<br>
+        <h2 class="u-align-center u-text u-text-default u-text-1">Your seating plan will show here soon!<br>
         </h2>
         <p class="u-align-center u-text u-text-body-color u-text-2">
-          Round 1 - Table Number: {{ seating_plan.round_1 }} - {{ table_names.get(seating_plan.round_1, 'No scores submitted, please ask the Forge team.') }}<br>
-          Round 2 - Table Number: {{ seating_plan.round_2 }} - {{ table_names.get(seating_plan.round_2, '') }}<br>
-          Round 3 - Table Number: {{ seating_plan.round_3 }} - {{ table_names.get(seating_plan.round_3, '') }}<br>
+          Round 1 - Table Number: {{ seating_plan.round_1|default('Please wait...', true) }} - {{ table_names.get(seating_plan.round_1, '') }}<br>
+          Round 2 - Table Number: {{ seating_plan.round_2|default('Please wait...', true) }} - {{ table_names.get(seating_plan.round_2, '') }}<br>
+          Round 3 - Table Number: {{ seating_plan.round_3|default('Please wait...', true) }} - {{ table_names.get(seating_plan.round_3, '') }}<br>
         </p>
 
       
