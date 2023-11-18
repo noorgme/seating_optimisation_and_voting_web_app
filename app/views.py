@@ -73,6 +73,21 @@ def scoring():
 
 @app.route("/seats", methods=["GET"])
 def seats():
+    table_names = {
+        1: "Hybrid Credit",
+        2: "Omnia Biosystems",
+        3: "HIT Coach",
+        4: "Convey Guru",
+        5: "Neutrally",
+        6: "ROMA",
+        7: "MATRX",
+        8: "Guliva",
+        9: "Fluen.io",
+        10: "Presales.ai",
+        11: "PropX",
+        12: "EKAI"
+    }
+
     if 'email' not in session:
         # Redirect user to login page if they're not logged in
         return redirect(url_for('index'))  # Ensure you have a login route defined
@@ -91,7 +106,7 @@ def seats():
         'round_3': user.round_3
     }
     
-    return render_template('seats.html', seating_plan=seating_plan)
+    return render_template('seats.html', seating_plan=seating_plan, table_names=table_names)
 
 @app.route('/admin', methods =['GET'])
 def admin():
