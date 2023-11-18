@@ -108,6 +108,23 @@ def seats():
     
     return render_template('seats.html', seating_plan=seating_plan, table_names=table_names)
 
+
+@app.route('/check_seats', methods=['GET'])
+def check_seats():
+    if 'email' not in session:
+        return {"redirect": url_for('index')}
+
+    user = User.query.filter_by(email=session.get('email')).first()
+    if not user:
+        return {"redirect": url_for('index')}
+
+    if user.round_1 and user.round_2 and user.round_3:
+        return {"redirect": url_for('seats')}
+
+    return {"redirect": None}
+
+
+
 @app.route('/admin', methods =['GET'])
 def admin():
     output_dir = os.path.join(app.root_path, 'algorithm')

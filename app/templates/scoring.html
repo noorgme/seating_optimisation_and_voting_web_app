@@ -840,5 +840,20 @@
 
 
     </section>
-  
+  <script>
+    function checkSeats() {
+        fetch('{{ url_for("check_seats") }}')
+            .then(response => response.json())
+            .then(data => {
+                if (data.redirect) {
+                    window.location.href = data.redirect;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+
+    // Check every 5 seconds
+    setInterval(checkSeats, 5000);
+</script>
+
 </body></html>

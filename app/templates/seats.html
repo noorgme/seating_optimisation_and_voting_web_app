@@ -51,9 +51,9 @@
         <h2 class="u-align-center u-text u-text-default u-text-1">Your seating plan will show here soon!<br>
         </h2>
         <p class="u-align-center u-text u-text-body-color u-text-2">
-          Round 1 - Table Number: {{ seating_plan.round_1|default('Please wait...', true) }} - {{ table_names.get(seating_plan.round_1, '') }}<br>
-          Round 2 - Table Number: {{ seating_plan.round_2|default('Please wait...', true) }} - {{ table_names.get(seating_plan.round_2, '') }}<br>
-          Round 3 - Table Number: {{ seating_plan.round_3|default('Please wait...', true) }} - {{ table_names.get(seating_plan.round_3, '') }}<br>
+          Round 1 - Table Number: {{ seating_plan.round_1|default('Please wait...', true) }}   {{ table_names.get(seating_plan.round_1, '') }}<br>
+          Round 2 - Table Number: {{ seating_plan.round_2|default('Please wait...', true) }}   {{ table_names.get(seating_plan.round_2, '') }}<br>
+          Round 3 - Table Number: {{ seating_plan.round_3|default('Please wait...', true) }}   {{ table_names.get(seating_plan.round_3, '') }}<br>
         </p>
 
       
