@@ -45,7 +45,7 @@ def seating_lp(companies, investors, num_investors, table_sizes, check_feasibili
                               cat='Binary')
 
     preferences = {i: {c: (5 - rank if c in choices else 0) for rank, choices in enumerate(investors[i]) for c in companies} for i in investors}
-    preference_weights = {1: 10, 2: 10, 3: 8, 4 : 6, 5: 4}
+    preference_weights = {1: 15, 2: 12, 3: 10, 4 : 0, 5: 0}
     prob += pulp.lpSum([preference_weights[preferences[i][j]] * x[(i, j, k)] 
                         if (j, k) in preferences[i] else 0 
                         for i in investors for j in companies for k in range(1, 4)])
@@ -61,7 +61,7 @@ def seating_lp(companies, investors, num_investors, table_sizes, check_feasibili
             prob += pulp.lpSum([x[(i, j, k)] for i in investors]) <= table_sizes[j]
             if not check_feasibility:
                 
-                prob += pulp.lpSum([x[(i, j, k)] for i in investors]) >= (table_sizes[j]) * 0.8
+                prob += pulp.lpSum([x[(i, j, k)] for i in investors]) >= (table_sizes[j]) * 0.6
 
 
     for i in investors:
