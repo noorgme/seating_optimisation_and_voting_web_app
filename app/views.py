@@ -193,7 +193,7 @@ def admin_download():
             'Hybrid Credit': user.hybridcredit,
             'MATRX': user.matrx,
             'Neutrally': user.neutrally,
-            'Omnia Biosystems': user.omniabiosystems,
+            #'Omnia Biosystems': user.omniabiosystems,
             'Presales.ai': user.presalesai,
             'PropX': user.propx,
             'ROMA': user.roma
