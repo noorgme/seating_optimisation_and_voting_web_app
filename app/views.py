@@ -147,7 +147,7 @@ def admin():
         (User.hybridcredit > 0) |
         (User.matrx > 0) |
         (User.neutrally > 0) |
-        (User.omniabiosystems > 0) |
+        #(User.omniabiosystems > 0) |
         (User.presalesai > 0) |
         (User.propx > 0) |
         (User.roma > 0)
