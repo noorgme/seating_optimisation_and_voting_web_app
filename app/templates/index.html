@@ -4,39 +4,34 @@
     <title>Email</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
+</head>
 <body>
-    
-
     <div class="login-box">
+        <img style="width:70%;display: block;text-align: center;margin:0 auto;" src="{{ url_for('static', filename='images/White.png')}}" alt="Logo" class="logo">
         <h2>Enter your details below</h2>
-        <form action="" method = "POST">
-          <div class="user-box">
-            <input type="text" name="email" required="">
-            <label>E-mail</label>
-          </div>
-          <div class="user-box">
-            <input type="text" name="name" required="">
-            <label>Full Name</label>
-          </div>
-          <a href="" id="submitLink">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-          </a>
+        <form action="" method="POST">
+            <div class="user-box">
+                <input type="text" name="email" required="">
+                <label>E-mail</label>
+            </div>
+            <div class="user-box">
+                <input type="text" name="name" required="">
+                <label>Full Name</label>
+            </div>
+            <a href="" id="submitLink">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <b>Submit</b>
+            </a>
         </form>
-      </div>
-      <script>
+    </div>
+    <script>
         document.getElementById("submitLink").addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent the default link behavior
-            document.querySelector('form').submit(); // Trigger form submission
+            event.preventDefault(); 
+            document.querySelector('form').submit(); 
         });
     </script>
-    
-      
-
 </body>
 </html>
-
